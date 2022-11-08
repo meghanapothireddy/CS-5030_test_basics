@@ -40,4 +40,14 @@ describe('todo test suite', () => {
         expect(todo_service.get_todos().todo.length).toEqual(3);
     });
 
+    test("Update todo", () => {
+        let todo = {
+            title: "todotest",
+            description: "test",
+            done: false
+        };
+        let res = todo_service.update_todo('T1', todo);
+        expect(res.title).toEqual('todotest');
+    });
+
 });
